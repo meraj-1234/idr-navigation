@@ -1,0 +1,45 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: idr-nav-backend
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:h2:mem:idrnavdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ""
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+
+idr:
+  navigation:
+    sample-window-size: 20
+    dt-default: 0.1
+    gravity-constant: 9.80665
+    zupt-acceleration-threshold: 0.15
+    zupt-gyro-threshold: 0.05
+    kalman:
+      gnss-pos-noise: 3.0
+      ins-accel-noise: 0.5
+      initial-pos-variance: 10.0
+      initial-vel-variance: 1.0
+  cors:
+    allowed-origins: "http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000"
+
+logging:
+  level:
+    root: INFO
+    com.idr.nav: INFO

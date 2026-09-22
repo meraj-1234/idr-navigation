@@ -1,0 +1,4 @@
+com/idr/nav/MockMLModelServiceTest.class
+com/idr/nav/DeadReckoningEngineTest.class
+com/idr/nav/NavigationIntegrationTest.class
+com/idr/nav/KalmanFilterServiceTest.class
