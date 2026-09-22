@@ -1,6 +1,6 @@
 import { GNSSSample, IMUSample, NavigationState, PipelineStatus, SystemEvent, SystemStatus, RouteGeometry, RouteRequest } from '../types/navigation';
 
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 
 export const api = {
   async getSystemStatus(): Promise<SystemStatus> {
